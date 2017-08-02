@@ -1,3 +1,23 @@
-<p>
-  login works!
-</p>
+<div class="fullscreen">
+  <form
+    (ngSubmit)="sendLogin()"
+    class="login--place">
+    <md-input-container>
+      <input mdInput
+             type="text"
+             required
+             [(ngModel)]="login"
+             name="login"
+             placeholder="Логин">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput
+             type="text"
+             required
+             [(ngModel)]="password"
+             name="password"
+             placeholder="Пароль">
+    </md-input-container>
+    <button md-raised-button type="submit">Войти</button>
+  </form>
+</div>

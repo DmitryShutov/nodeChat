@@ -1,0 +1,17 @@
+form > * {
+  margin-bottom: 20px;
+  width: 300px
+}
+
+button {
+  margin-top: 20px;
+}
+
+.registration {
+  margin: auto;
+  padding: 50px;
+  border: 1px solid #ebebeb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}

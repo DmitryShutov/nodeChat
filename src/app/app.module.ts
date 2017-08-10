@@ -9,11 +9,13 @@ import {LoginComponent} from './login/login.component';
 import {MdButtonModule, MdInputModule} from '@angular/material';
 import {SocketService} from './services/socket.service';
 import {FormsModule} from '@angular/forms';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,10 @@
     class="registration"
   >
     <md-input-container>
-      <input mdInput type="text" required
+      <input mdInput
+             type="text"
+             [formControl]="login"
+             required
              placeholder="Login">
     </md-input-container>
     <md-input-container floatPlaceholder="auto">

@@ -8,7 +8,7 @@ import {RouterModule} from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {MdButtonModule, MdInputModule} from '@angular/material';
 import {SocketService} from './services/socket.service';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
@@ -22,6 +22,7 @@ import { RegistrationComponent } from './registration/registration.component';
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
     FormsModule,
+    ReactiveFormsModule,
     MdInputModule,
     MdButtonModule
   ],

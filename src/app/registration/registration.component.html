@@ -1,16 +1,20 @@
 <div class="fullscreen">
   <form
+    [formGroup]="form"
+    (ngSubmit)=onSubmit()
     class="registration"
+    novalidate
   >
     <md-input-container>
       <input mdInput
              type="text"
-             [formControl]="login"
-             required
+             formControlName="login"
              placeholder="Login">
     </md-input-container>
     <md-input-container floatPlaceholder="auto">
-      <input mdInput type="text" required
+      <input mdInput 
+             type="text"
+             formControlName="password"
              placeholder="Password">
     </md-input-container>
     <button md-raised-button>Register</button>

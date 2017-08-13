@@ -10,12 +10,16 @@ import {MdButtonModule, MdInputModule} from '@angular/material';
 import {SocketService} from './services/socket.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
+import { SendMessageComponent } from './send-message/send-message.component';
+import { MainMessageScreenComponent } from './main-message-screen/main-message-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    SendMessageComponent,
+    MainMessageScreenComponent
   ],
   imports: [
     BrowserModule,

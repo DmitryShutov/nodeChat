@@ -19,7 +19,7 @@ export class LoginComponent {
       login: this.login,
       password: this.password,
     };
-    this.socket.emit('auth', this.credentials).subscribe(
+    this.socket.emit('login', this.credentials).subscribe(
       (data) => console.log('success', data),
       (error) => console.log('error', error),
       () => console.log('complete'),

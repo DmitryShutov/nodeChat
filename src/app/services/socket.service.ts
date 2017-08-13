@@ -11,7 +11,7 @@ export class SocketService {
   private socket: any;
 
   constructor() {
-    this.socket = io(this.host);
+    this.socket = io.connect(this.host);
     this.socket.on('connect', () => this.connected());
     this.socket.on('disconnect', () => this.disconnected());
     this.socket.on('error', (error: string) => {

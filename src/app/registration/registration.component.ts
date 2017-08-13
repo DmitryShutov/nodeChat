@@ -1,31 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {SocketService} from '../services/socket.service';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponent {
 
   form: FormGroup;
+  regData: {
+    login: string,
+    password: string,
+  };
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private socket: SocketService) {
     this.form = fb.group({
       login: ['', Validators.required],
       password: ['', Validators.required],
-    })
+    });
    }
-
-  ngOnInit() {
-  }
 
   onSubmit() {
     if (!this.form.valid) {
       return;
     }
-    const formModel = this.form.value;
-    console.log(formModel);
+    this.regData = this.form.value;
+    this.sendRegData();
+  }
+
+  sendRegData() {
+    this.socket.emit('registrate', this.regData).subscribe(
+      (data) => {
+        console.log('Success');
+      },
+      error => console.log('Error', error),
+      () => console.log('complete')
+    );
   }
 
 }

@@ -6,13 +6,20 @@ import {SocketService} from '../services/socket.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   login: string;
   password: string;
   credentials: {};
 
 
   constructor(private socket: SocketService) { }
+
+  ngOnInit() {
+    this.socket.on('login').subscribe(
+      data => console.log(data),
+      err => console.log(err),
+    );
+  }
 
   sendLogin() {
     this.credentials = {

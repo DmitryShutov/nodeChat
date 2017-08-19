@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SocketService} from '../services/socket.service';
 import {Router} from '@angular/router';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private socket: SocketService,
-    private router: Router
+    private router: Router,
+    private authservice: AuthService,
   ) { }
 
   ngOnInit() {
@@ -27,6 +29,7 @@ export class LoginComponent implements OnInit {
 
   onLogin(data) {
     if (data.result && data.result === 'success') {
+      this.authservice.setUser(data.username);
       this.router.navigate(['/main']);
     }
   }

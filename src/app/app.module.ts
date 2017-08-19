@@ -13,6 +13,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { SendMessageComponent } from './send-message/send-message.component';
 import { MainMessageScreenComponent } from './main-message-screen/main-message-screen.component';
 import { UsersListComponent } from './main-message-screen/users-list/users-list.component';
+import {MessagesService} from './services/messages.service';
+import {AuthService} from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { UsersListComponent } from './main-message-screen/users-list/users-list.
     MdInputModule,
     MdButtonModule
   ],
-  providers: [SocketService],
+  providers: [SocketService, MessagesService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
-import {SocketService} from './socket.service';
+import {User} from '../models/user.model';
 
 @Injectable()
 export class AuthService {
+  private currentUser: User;
 
-  constructor() {  }
+  public setUser(user) {
+    this.currentUser = new User(user, null);
+  }
+
+  public getUser() {
+    return this.currentUser;
+  }
 
 }

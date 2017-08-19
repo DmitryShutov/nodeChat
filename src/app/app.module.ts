@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { SendMessageComponent } from './send-message/send-message.component';
 import { MainMessageScreenComponent } from './main-message-screen/main-message-screen.component';
+import { UsersListComponent } from './main-message-screen/users-list/users-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MainMessageScreenComponent } from './main-message-screen/main-message-s
     LoginComponent,
     RegistrationComponent,
     SendMessageComponent,
-    MainMessageScreenComponent
+    MainMessageScreenComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,

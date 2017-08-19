@@ -25,6 +25,7 @@
     "@angular/router": "^4.3.0",
     "@types/socket.io": "^1.4.29",
     "core-js": "^2.4.1",
+    "node-sass": "^4.5.3",
     "reset-css": "^2.2.1",
     "rxjs": "^5.4.1",
     "socket.io-client": "^2.0.3",

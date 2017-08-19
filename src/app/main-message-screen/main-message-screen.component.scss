@@ -1,0 +1,12 @@
+.main-screen {
+  display: flex;
+  width: 80%;
+  padding: 10%;
+  height: 80vh;
+  app-send-message {
+    flex-grow: 1;
+  }
+  app-users-list {
+    flex-grow: 1;
+  }
+}

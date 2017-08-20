@@ -21,6 +21,9 @@ export class SendMessageComponent implements OnInit {
   }
 
   onSendMessage(value: string) {
+    if (!value) {
+      return;
+    }
     const message = new Message(value, this.currentUser.login);
   }
 

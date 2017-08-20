@@ -9,6 +9,7 @@ export class MessagesService {
 
   addMessage(message: Message) {
     this.messages.push(message);
+    return this.sendMessage(message);
   }
 
   getMessages() {
@@ -19,4 +20,7 @@ export class MessagesService {
     this.messages.splice(this.messages.indexOf(message), 1);
   }
 
+  sendMessage(message: Message) {
+    return this.io.emit('messages', message);
+  }
 }

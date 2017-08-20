@@ -3,6 +3,7 @@ import {MessagesService} from '../services/messages.service';
 import {Message} from '../models/message.model';
 import {AuthService} from '../services/auth.service';
 import {User} from '../models/user.model';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-send-message',
@@ -20,11 +21,13 @@ export class SendMessageComponent implements OnInit {
     this.currentUser = this.authService.getUser();
   }
 
-  onSendMessage(value: string) {
-    if (!value) {
-      return;
-    }
-    const message = new Message(value, this.currentUser.login);
+  onSubmit(form: NgForm) {
+    const message = new Message(form.value.content, this.currentUser.login);
+    this.messageService.addMessage(message).subscribe(
+      data => console.log('data'),
+      error => console.log('error'),
+      () => console.log('complete'),
+    );
   }
 
 }

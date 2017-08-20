@@ -1,10 +1,12 @@
-<div class="send-message">
+<form class="send-message" (ngSubmit)="onSubmit(f)" #f="ngForm">
   <md-input-container floatPlaceholder="auto">
     <textarea mdInput
               #message
               type="text"
-           placeholder="">
+              name="content"
+              ngModel
+              placeholder="">
     </textarea>
   </md-input-container>
-  <button md-raised-button (click)="onSendMessage(message.value)">Отправить</button>
-</div>
+  <button md-raised-button type="submit">Отправить</button>
+</form>

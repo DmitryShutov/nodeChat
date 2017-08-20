@@ -15,6 +15,7 @@ import { MainMessageScreenComponent } from './main-message-screen/main-message-s
 import { UsersListComponent } from './main-message-screen/users-list/users-list.component';
 import {MessagesService} from './services/messages.service';
 import {AuthService} from './services/auth.service';
+import {UsersService} from './services/users.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import {AuthService} from './services/auth.service';
     RegistrationComponent,
     SendMessageComponent,
     MainMessageScreenComponent,
-    UsersListComponent
+    UsersListComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,7 @@ import {AuthService} from './services/auth.service';
     MdInputModule,
     MdButtonModule
   ],
-  providers: [SocketService, MessagesService, AuthService],
+  providers: [SocketService, MessagesService, AuthService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

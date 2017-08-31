@@ -16,6 +16,8 @@ import { UsersListComponent } from './main-message-screen/users-list/users-list.
 import {MessagesService} from './services/messages.service';
 import {AuthService} from './services/auth.service';
 import {UsersService} from './services/users.service';
+import {NetworkService} from './services/network.service';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,14 +30,15 @@ import {UsersService} from './services/users.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
     FormsModule,
     ReactiveFormsModule,
     MdInputModule,
-    MdButtonModule
+    MdButtonModule,
   ],
-  providers: [SocketService, MessagesService, AuthService, UsersService],
+  providers: [HttpClient, SocketService, MessagesService, AuthService, UsersService, NetworkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,7 +15,6 @@ export class UsersListComponent implements OnInit {
   }
 
   getUsersList() {
-    console.log('111');
     this.usersService.getUsersList().subscribe(
       data => console.log(data),
       error => console.log(error),

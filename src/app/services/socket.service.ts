@@ -8,7 +8,7 @@ const SERVER_ADDRESS = 'http://localhost:3100';
 export class SocketService {
 
   private host: string = SERVER_ADDRESS;
-  private socket: any;
+  private socket: SocketIOClient.Socket;
 
   constructor() {
     this.socket = io.connect(this.host);
@@ -60,3 +60,5 @@ export class SocketService {
   }
 
 }
+
+export { SERVER_ADDRESS };

@@ -16,4 +16,8 @@ export class AuthService {
     return this.currentUser || userFromStorage;
   }
 
+  public login() {
+
+  }
+
 }
